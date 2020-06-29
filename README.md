@@ -1,45 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description of the problem and solution.
 
-### `Description of the problem and solution.`
+### Problem
 
-## Description
+Creating a functional dashboard with minimal front-end and backend setup.
 
-Created the `Project Board` Prototype as an assingment.
-Project Board has multiple Action items with different Title, status, multiple owners and due dates assigned to it, which will be added from the backend and rendered in the UI as individual cards.
+### Solution
 
-## Solution
+React frontend and Node.js backend was used in building the solution. Redux store management is used. Simple REST API endpoints are used for the board CRUD operations. Importance has been given to clean frontend code.
 
-Frontend `React`<br/>
+#### Details
+
+Frontend - React<br/>
 
 1. As per the UI, the components has been divided accordingly ex: in headers components like `Main Header` `Side Header` and for board seperate `Board Header` is added which increases the reusability of the components wherever necessary.
 2. For state mangement `Redux` is used and `Redux Saga` is used as a middleware.
 
-Backend `Node Express`<br/>
+Backend - Node Express<br/>
 
-1. For backend the mongoDB is used for the database from mLabs.
-2. Only to Create, Read and Update route is done which does corresponding Actions for the Project.
+1. MongoDB from mLab is used to keep the DB side simple
+2. Only create, read and update route is done. Which does corresponding actions for the project.
 
-### Reasoning behind your technical choices, including architectural.
+## Reasoning behind your technical choices, including architectural.
 
 1. It is Easy to build and deploy both frontend and backend in Javacript and I have been using Express and React from the begining.
 2. And MongoDB is flexible enough to use.
 
-### Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
+## Trade-offs
 
-1. I would complete adding the new project item from the UI to Database.
-2. Delete and Updating the project item can also be completed.
+1. Keeping time in mind, the importance was shown to write good frontend code & have clean design details in the frontend
+2. Complete frontend functionalities & backend features
 
-### Link to other code you're particularly proud of.
-
-### Link to the hosted application where applicable.
+### Application link
 
 Assignment [https://byjus-frontend.herokuapp.com/board](Link) which is deployed in Heroku
 
-### Setup instructions, and any tests or other documentation you created as part of your solution.
+### Setup instructions
 
 [Clone the App](https://github.com/kiran-kumar011/Byjus.git) and run `cd repo-name && npm install && npm start`
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Lint errors are displayed in the console.
