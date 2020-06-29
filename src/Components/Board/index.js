@@ -50,7 +50,7 @@ class Board extends Component {
 
   fetchBoards = () => {
     console.log('getch boards');
-    const production = false;
+    const production = true;
     const url = production
       ? 'https://still-sea-81590.herokuapp.com'
       : 'http://localhost:8080';
