@@ -1,55 +1,42 @@
-import React, { useState } from 'react';
-import { BsArrowUpDown, BsFunnel, BsGrid, BsInbox } from 'react-icons/bs';
-// import { FaFileAlt } from 'react-icons/fa';
-import { AiOutlineAppstore } from 'react-icons/ai';
-import Button from '../../UIComponents/Button';
+import React from 'react';
+import { BsArrowUpDown, BsFunnel, BsGrid } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
 
 const arr = ['List', 'Grantt', 'Board', 'Calender', 'Pivot', 'Process'];
 
-const BoardHeader = (props) => {
-  const [navItem, setSelectedNav] = useState('List');
+const BoardHeader = ({ selectedIcon, handleIconClick }) => {
+  console.log(selectedIcon, 'selected icon');
   return (
     <div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          paddingRight: '10px',
-          borderBottom: '1px solid rgba(0,0,0,0.1)',
-        }}
-      >
-        <ul
-          style={{
-            display: 'flex',
-            width: '30vw',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: '5px',
-            marginLeft: '50px',
-          }}
-        >
+      <div className="board-header-container flex-default-styling">
+        <ul className="board-header-text-wrapper flex-default-styling">
           {arr.map((itm, ind) => {
-            const selected = navItem === itm;
+            const selected = selectedIcon.toLowerCase() === itm.toLowerCase();
             return (
               <div
-                onClick={() => setSelectedNav(itm)}
+                key={ind}
+                onClick={() => handleIconClick(itm.toLowerCase())}
                 style={{
                   borderBottom: selected
                     ? '3px solid #813589'
                     : '1px solid transparent',
                 }}
               >
-                <li
-                  style={{
-                    fontSize: '12px',
-                    padding: '8px',
-                    color: selected ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,0.3)',
-                    fontWeight: selected ? 600 : 400,
-                  }}
+                <NavLink
+                  style={{ textDecoration: 'none' }}
+                  to={`/${itm.toLowerCase()}`}
                 >
-                  {itm}
-                </li>
+                  <li
+                    style={{
+                      fontSize: '12px',
+                      padding: '8px',
+                      color: selected ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,0.3)',
+                      fontWeight: selected ? 600 : 500,
+                    }}
+                  >
+                    {itm}
+                  </li>
+                </NavLink>
               </div>
             );
           })}
@@ -59,6 +46,7 @@ const BoardHeader = (props) => {
             display: 'flex',
             width: '18vw',
             justifyContent: 'space-between',
+            paddingRight: '10px',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>

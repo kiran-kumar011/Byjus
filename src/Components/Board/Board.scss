@@ -1,0 +1,101 @@
+// board header styling
+.board-header-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  .board-header-text-wrapper {
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 110px;
+  }
+}
+
+// board Status Container styling
+.status-card-header {
+  color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  .status-title {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+.item-not-available {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.board-details-paratext {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+// Board details container styling
+.board-details-wrapper {
+  margin-top: 10px;
+  .board-details-top-border {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .board-details-body {
+    background-color: #fff;
+    padding: 10px 10px 0px 10px;
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    .board-title-icon {
+      display: flex;
+      justify-content: space-between;
+      color: rgba(0, 0, 0, 0.4);
+      height: 40px;
+      .board-title {
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+    .board-owners-duedate-status {
+      margin-top: 15px;
+      padding-bottom: 3px;
+      .board-owner-image-addowner {
+        font-size: 17px;
+        color: #813589;
+        .owner-image {
+          width: 25px;
+          height: 25px;
+          border-radius: 4px;
+          object-fit: cover;
+        }
+      }
+      .board-duedate-completion-percentage-wrapper {
+        .board-duedate {
+          background-color: #6b91972e;
+          color: rgba(0, 0, 0, 0.4);
+          font-size: 10px;
+          padding: 0px 0px 0 5px;
+          width: 90%;
+          margin-right: 5px;
+          border-radius: 3px;
+          .duedate-para {
+            padding: 5px 10px;
+            font-weight: 600;
+          }
+        }
+        .completion-percentage {
+          color: #fff;
+          font-size: 10px;
+          background-color: #6060e7f2;
+          padding: 5px 10px;
+          font-weight: 600;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

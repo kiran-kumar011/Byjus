@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import boardReducer from './boards';
 
 const mainReducer = combineReducers({
-  pages: {},
+  boards: boardReducer,
 });
 
 const rootReducer = (state, action) => {

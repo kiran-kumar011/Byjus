@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Button from '../../../UIComponents/Button';
 import { NavLink } from 'react-router-dom';
+import Button from '../../../UIComponents/Button';
 
 // icons
 import {
@@ -22,129 +22,121 @@ class SideHeader extends Component {
     };
   }
 
-  componentDidMount() {
-    const { location, history } = this.props.route;
-
-    console.log(location.pathname, 'loation');
-    if (!location.pathname.split('/')[1]) {
-      history.push('/boards');
-      this.setState({ selectedIcon: 'boards' });
-    } else {
-      this.setState({ selectedIcon: location.pathname.split('/')[1] });
-    }
-    console.log(this.props.route, 'props');
-  }
-
-  handleIconClick = (selectedIcon) => {
-    console.log('icon click', selectedIcon);
-    this.setState({ selectedIcon });
-  };
-
   render() {
-    const { selectedIcon } = this.state;
-    const style = { color: '#fff' };
+    const { selectedIcon, handleIconClick } = this.props;
     return (
-      <div
-        style={{
-          backgroundColor: 'rgb(129, 53, 137)',
-          width: '60px',
-          paddingTop: '40px',
-          height: '100vh',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            padding: '10px',
-          }}
-        >
-          <Button onClick={() => this.handleIconClick('home')}>
+      <div className="side-header-container">
+        <div className="side-header-wrapper">
+          <Button onClick={() => handleIconClick('list')}>
             <div
-              className={selectedIcon === 'home' ? 'active-icon' : 'inactive'}
+              className={
+                selectedIcon === 'list'
+                  ? 'active-icon flex-default-styling'
+                  : 'inactive-icon flex-default-styling'
+              }
             >
-              <NavLink className="icon" to="/home">
+              <NavLink className="icon" to="/list">
                 <AiFillHome
                   style={{
-                    color: selectedIcon === 'home' ? '#813589' : '#fff',
+                    color: selectedIcon === 'list' ? '#813589' : '#fff',
                   }}
                 />
               </NavLink>
             </div>
           </Button>
 
-          <Button
-            // style={{ backgroundColor: '#fff' }}
-            onClick={() => this.handleIconClick('search')}
-          >
+          <Button onClick={() => handleIconClick('grantt')}>
             <div
-              className={selectedIcon === 'search' ? 'active-icon' : 'inactive'}
+              className={
+                selectedIcon === 'grantt'
+                  ? 'active-icon flex-default-styling'
+                  : 'inactive-icon flex-default-styling'
+              }
             >
-              <NavLink className="icon" to="/search">
+              <NavLink className="icon" to="/grantt">
                 <AiOutlineFileSearch
                   style={{
-                    color: selectedIcon === 'search' ? '#813589' : '#fff',
+                    color: selectedIcon === 'grantt' ? '#813589' : '#fff',
                   }}
                 />
               </NavLink>
             </div>
           </Button>
-          <Button onClick={() => this.handleIconClick('boards')}>
+          <Button onClick={() => handleIconClick('board')}>
             <div
-              className={selectedIcon === 'boards' ? 'active-icon' : 'inactive'}
+              className={
+                selectedIcon === 'board'
+                  ? 'active-icon flex-default-styling'
+                  : 'inactive-icon flex-default-styling'
+              }
             >
-              <NavLink className="icon" to="/boards">
+              <NavLink className="icon" to="/board">
                 <FaFolderPlus
                   style={{
-                    color: selectedIcon === 'boards' ? '#813589' : '#fff',
+                    color: selectedIcon === 'board' ? '#813589' : '#fff',
                   }}
                 />
               </NavLink>
             </div>
           </Button>
-          <Button onClick={() => this.handleIconClick('lists')}>
+          <Button onClick={() => handleIconClick('calender')}>
             <div
-              className={selectedIcon === 'lists' ? 'active-icon' : 'inactive'}
+              className={
+                selectedIcon === 'calender'
+                  ? 'active-icon flex-default-styling'
+                  : 'inactive-icon flex-default-styling'
+              }
             >
-              <NavLink className="icon" to="/lists">
+              <NavLink className="icon" to="/calender">
                 <FaClipboardList
                   style={{
-                    color: selectedIcon === 'lists' ? '#813589' : '#fff',
+                    color: selectedIcon === 'calender' ? '#813589' : '#fff',
                   }}
                 />
               </NavLink>
             </div>
           </Button>
-          <Button onClick={() => this.handleIconClick('inbox')}>
+          <Button onClick={() => handleIconClick('pivot')}>
             <div
-              className={selectedIcon === 'inbox' ? 'active-icon' : 'inactive'}
+              className={
+                selectedIcon === 'pivot'
+                  ? 'active-icon flex-default-styling'
+                  : 'inactive-icon flex-default-styling'
+              }
             >
-              <NavLink className="icon" to="/inbox">
+              <NavLink className="icon" to="/pivot">
                 <FaInbox
                   style={{
-                    color: selectedIcon === 'inbox' ? '#813589' : '#fff',
+                    color: selectedIcon === 'pivot' ? '#813589' : '#fff',
                   }}
                 />
               </NavLink>
             </div>
           </Button>
-          <Button onClick={() => this.handleIconClick('users')}>
+          <Button onClick={() => handleIconClick('process')}>
             <div
-              className={selectedIcon === 'users' ? 'active-icon' : 'inactive'}
+              className={
+                selectedIcon === 'process'
+                  ? 'active-icon flex-default-styling'
+                  : 'inactive-icon flex-default-styling'
+              }
             >
-              <NavLink className="icon" to="/users">
+              <NavLink className="icon" to="/process">
                 <FaUsers
                   style={{
-                    color: selectedIcon === 'users' ? '#813589' : '#fff',
+                    color: selectedIcon === 'process' ? '#813589' : '#fff',
                   }}
                 />
               </NavLink>
             </div>
           </Button>
-          <Button onClick={() => this.handleIconClick('graphs')}>
+          <Button onClick={() => handleIconClick('graphs')}>
             <div
-              className={selectedIcon === 'graphs' ? 'active-icon' : 'inactive'}
+              className={
+                selectedIcon === 'graphs'
+                  ? 'active-icon flex-default-styling'
+                  : 'inactive-icon flex-default-styling'
+              }
             >
               <NavLink className="icon" to="/graphs">
                 <BsGraphUp
@@ -161,4 +153,8 @@ class SideHeader extends Component {
   }
 }
 
-export default connect(() => {})(SideHeader);
+const mapStateToProps = (state) => {
+  return {};
+};
+
+export default connect(mapStateToProps)(SideHeader);

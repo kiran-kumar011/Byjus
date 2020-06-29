@@ -1,0 +1,101 @@
+// main header
+$base-color: #813589;
+// $border-color:
+
+.header-container {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  z-index: 1;
+  background-color: #fff;
+  .header-body-wrapper {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 9px 10px 0px 10px;
+    .left-header-wrapper {
+      width: 35%;
+      padding-left: 4px;
+      .byju-logo {
+        width: 30px;
+        height: 30px;
+      }
+      .header-title-icons-wrapper {
+        margin-left: 20px;
+        font-weight: 800;
+        .left-header-text-wrapper {
+          width: 27vw;
+          .nav-wrapper {
+            font-size: 12px;
+            padding: 10px 5px 5px 7px;
+          }
+          .active-nav {
+            border-bottom: 3px solid $base-color;
+            color: rgba(0, 0, 0, 1);
+            font-weight: 600;
+          }
+          .inactive-nav {
+            border-bottom: 3px solid transparent;
+            color: rgba(0, 0, 0, 0.3);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .right-header-wrapper {
+      width: 14vw;
+      padding-right: 10px;
+      .right-icon-wrapper {
+        padding: 4px 6px 1px 6px;
+        border: 1px solid transparent;
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        color: $base-color;
+        font-size: 16px;
+      }
+      .user-name-image-wrapper {
+        width: 5vw;
+        .user-image {
+          width: 30px;
+          height: 30px;
+          object-fit: cover;
+          border-radius: 3px;
+        }
+        .user-name {
+          font-size: 13px;
+          font-weight: 600;
+          padding-left: 3px;
+        }
+      }
+    }
+  }
+}
+
+// Side header styling
+.side-header-container {
+  background-color: $base-color;
+  width: 60px;
+  padding-top: 40px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  .side-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    align-content: stretch;
+    .active-icon {
+      background-color: #fff;
+      width: 3rem;
+      height: 3rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    .inactive-icon {
+      background-color: $base-color;
+      width: 3rem;
+      height: 3rem;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+}
