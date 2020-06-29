@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import './Board.scss';
 // views
@@ -9,14 +10,12 @@ import Loader from '../../UIComponents/Loader/Loader';
 import StatusCard from './StatusCard';
 
 // action
-import { addNewBoards } from '../../redux-utils/actions';
+import { fetchAllBoards } from '../../redux-utils/actions';
 
 class Board extends Component {
   constructor() {
     super();
     this.state = {
-      boards: [],
-      isFetching: false,
       selectedIcon: '',
     };
   }
@@ -24,7 +23,6 @@ class Board extends Component {
   componentDidMount = () => {
     const { location, history } = this.props.route;
 
-    console.log(location.pathname, 'location');
     if (!location.pathname.split('/')[1]) {
       history.push('/board');
       this.setState({ selectedIcon: 'board', isFetching: true }, () => {
@@ -40,54 +38,31 @@ class Board extends Component {
         }
       );
     }
-    console.log(this.props.route, 'props');
   };
 
   handleIconClick = (selectedIcon) => {
-    console.log('icon click', selectedIcon);
     this.setState({ selectedIcon });
   };
 
   fetchBoards = () => {
-    console.log('getch boards');
-    const production = true;
-    const url = production
-      ? 'https://still-sea-81590.herokuapp.com'
-      : 'http://localhost:8080';
-    fetch(url + '/boards')
-      .then((res) => res.json())
-      .then((data) => {
-        const { boards, status } = data;
-        this.setState({ boards: boards, isFetching: false }, () => {
-          this.props.dispatchNewBoards({ params: { boards, status } });
-        });
-      })
-      .catch((err) => {
-        this.setState({ isFetching: false });
-        console.log(err, 'from fetch');
-      });
+    this.props.dispatchFetchAllBoards();
   };
 
   render() {
-    const { isFetching, selectedIcon } = this.state;
-    const { status } = this.props;
+    const { selectedIcon } = this.state;
+    const { status, isFetching } = this.props;
     const path = this.props.route.location.pathname.split('/')[1];
 
     return (
       <div>
-        <div
-          style={{
-            display: 'flex',
-            width: '100%',
-          }}
-        >
-          <div style={{ marginTop: '60px', width: '100%' }}>
+        <div className="board-main-container flex-default-styling">
+          <div className="board-main-wrapper">
             <SideHeader
               handleIconClick={this.handleIconClick}
               selectedIcon={selectedIcon}
               route={this.props.route}
             />
-            <div style={{ width: '100%' }}>
+            <div className="board-header-and-body-wrapper">
               <div>
                 <BoardHeader
                   handleIconClick={this.handleIconClick}
@@ -95,36 +70,15 @@ class Board extends Component {
                 />
               </div>
               {path === 'board' && (
-                <div
-                  style={{
-                    paddingTop: '27px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    width: '100%',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <ul
-                    style={{
-                      display: 'flex',
-                      margin: '20px 20px 20px 50px',
-                      paddingLeft: '20px',
-                      justifyContent: 'space-between',
-                    }}
-                  >
+                <div className="board-body-main-container flex-default-styling">
+                  <ul className="board-status-card-list-wrapper">
                     {!isFetching ? (
                       status.map((name) => {
                         return (
                           <div
                             draggable
                             key={name}
-                            style={{
-                              backgroundColor: '#6b91972e',
-                              width: '26vw',
-                              padding: '10px',
-                              margin: '10px 10px 10px 10px',
-                              borderRadius: '10px',
-                            }}
+                            className="board-card-item-wrapper"
                           >
                             <StatusCard status={name} />
                           </div>
@@ -144,17 +98,20 @@ class Board extends Component {
   }
 }
 
-Board.propTypes = {};
+Board.propTypes = {
+  status: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = (state) => {
   return {
-    allBoards: state.boards.boards,
+    isFetching: state.boards.isFetching,
     status: state.boards.status,
   };
 };
 
 const mapDispatchToProps = {
-  dispatchNewBoards: addNewBoards,
+  dispatchFetchAllBoards: fetchAllBoards,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);

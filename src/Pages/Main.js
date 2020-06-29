@@ -4,11 +4,9 @@ import Header from '../Components/Headers';
 
 // views
 const Board = lazy(() => import('../Components/Board'));
-// const Header = lazy(() => import('../Components/Headers'));
 
 class Main extends Component {
   render() {
-    console.log(this.props, 'props from main');
     return (
       <div>
         <div>

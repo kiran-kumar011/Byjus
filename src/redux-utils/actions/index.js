@@ -1,3 +1,3 @@
-import { addNewBoards } from './boards';
+import { fetchAllBoards } from './boards';
 
-export { addNewBoards };
+export { fetchAllBoards };

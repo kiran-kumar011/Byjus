@@ -1,8 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
+import { boardTypes } from '../types';
 
-const addNewBoards = ({ params }) => {
-  const action = createAction('ADD_BOARDS')({ params });
+const fetchAllBoards = () => {
+  const action = createAction(boardTypes.boards.request)();
   return action;
 };
 
-export { addNewBoards };
+export { fetchAllBoards };

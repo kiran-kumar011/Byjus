@@ -1,11 +1,12 @@
 import React from 'react';
 import { BsArrowUpDown, BsFunnel, BsGrid } from 'react-icons/bs';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import Button from '../../UIComponents/Button';
 
 const arr = ['List', 'Grantt', 'Board', 'Calender', 'Pivot', 'Process'];
 
 const BoardHeader = ({ selectedIcon, handleIconClick }) => {
-  console.log(selectedIcon, 'selected icon');
   return (
     <div>
       <div className="board-header-container flex-default-styling">
@@ -16,61 +17,50 @@ const BoardHeader = ({ selectedIcon, handleIconClick }) => {
               <div
                 key={ind}
                 onClick={() => handleIconClick(itm.toLowerCase())}
-                style={{
-                  borderBottom: selected
-                    ? '3px solid #813589'
-                    : '1px solid transparent',
-                }}
+                className={
+                  selected
+                    ? 'board-header-nav-text-item-active'
+                    : 'board-header-nav-text-item-inactive'
+                }
               >
                 <NavLink
                   style={{ textDecoration: 'none' }}
                   to={`/${itm.toLowerCase()}`}
                 >
-                  <li
-                    style={{
-                      fontSize: '12px',
-                      padding: '8px',
-                      color: selected ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,0.3)',
-                      fontWeight: selected ? 600 : 500,
-                    }}
-                  >
-                    {itm}
-                  </li>
+                  <li>{itm}</li>
                 </NavLink>
               </div>
             );
           })}
         </ul>
-        <div
-          style={{
-            display: 'flex',
-            width: '18vw',
-            justifyContent: 'space-between',
-            paddingRight: '10px',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <BsGrid />
-            <span style={{ fontSize: '12px', padding: '5px', fontWeight: 500 }}>
-              Fields
-            </span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <BsArrowUpDown />
-            <span style={{ fontSize: '12px', padding: '5px', fontWeight: 500 }}>
-              Sort
-            </span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <BsFunnel />
-            <span style={{ fontSize: '12px', padding: '5px', fontWeight: 500 }}>
-              Filter
-            </span>
-          </div>
+        <div className="board-header-right-section flex-default-styling">
+          <Button>
+            <div className="flex-default-styling">
+              <BsGrid />
+              <span className="board-right-header-text">Fields</span>
+            </div>
+          </Button>
+          <Button>
+            <div className="flex-default-styling">
+              <BsArrowUpDown />
+              <span className="board-right-header-text">Sort</span>
+            </div>
+          </Button>
+          <Button>
+            <div className="flex-default-styling">
+              <BsFunnel />
+              <span className="board-right-header-text">Filter</span>
+            </div>
+          </Button>
         </div>
       </div>
     </div>
   );
+};
+
+BoardHeader.propTypes = {
+  selectedIcon: PropTypes.string.isRequired,
+  handleIconClick: PropTypes.func.isRequired,
 };
 
 export default BoardHeader;

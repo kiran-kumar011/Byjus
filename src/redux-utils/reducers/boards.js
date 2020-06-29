@@ -1,4 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
+import { boardTypes } from '../types';
 
 const initialState = {
   boards: [],
@@ -7,9 +8,16 @@ const initialState = {
 };
 
 const reducer = createReducer(initialState, {
-  ADD_BOARDS: (state, action) => {
-    state.boards = action.payload.params.boards;
-    state.status = action.payload.params.status;
+  [boardTypes.boards.request]: (state) => {
+    state.isFetching = true;
+  },
+  [boardTypes.boards.success]: (state, action) => {
+    state.boards = action.payload.boards;
+    state.status = action.payload.status;
+    state.isFetching = false;
+  },
+  [boardTypes.boards.error]: (state) => {
+    state.isFetching = false;
   },
 });
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FaSistrix } from 'react-icons/fa';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+// import PropTypes from 'prop-types';
 
 import ByjusLogo from '../../Assets/byjus.png';
 import Button from '../../UIComponents/Button';
@@ -15,6 +16,7 @@ class Header extends Component {
     super();
     this.state = {
       navItem: 'Task',
+      showInput: false,
     };
   }
 
@@ -76,5 +78,7 @@ class Header extends Component {
     );
   }
 }
+
+// Header.propTypes = {};
 
 export default Header;

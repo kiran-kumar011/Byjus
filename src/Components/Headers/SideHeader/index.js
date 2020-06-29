@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Button from '../../../UIComponents/Button';
@@ -152,6 +153,11 @@ class SideHeader extends Component {
     );
   }
 }
+
+SideHeader.propTypes = {
+  selectedIcon: PropTypes.string.isRequired,
+  handleIconClick: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => {
   return {};

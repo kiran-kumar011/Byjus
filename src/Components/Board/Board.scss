@@ -1,9 +1,39 @@
+// Main Board container
+.board-main-container {
+  width: 100%;
+  .board-main-wrapper {
+    margin-top: 60px;
+    width: 100%;
+    .board-header-and-body-wrapper {
+      width: '100%';
+      .board-body-main-container {
+        width: 100%;
+        padding-top: 40px;
+        .board-status-card-list-wrapper {
+          width: 100%;
+          padding: 20px 20px 20px 100px;
+          display: flex;
+          justify-content: space-between;
+          .board-card-item-wrapper {
+            background-color: #6b91972e;
+            width: 26vw;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
 // board header styling
 .board-header-container {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   background-color: #fff;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
   .board-header-text-wrapper {
     display: flex;
     width: 30vw;
@@ -11,10 +41,38 @@
     align-items: center;
     margin-top: 5px;
     margin-left: 110px;
+    .board-header-nav-text-item-active {
+      border-bottom: 3px solid #813589;
+      li {
+        font-size: 12px;
+        padding: 8px;
+        color: rgba(0, 0, 0, 1);
+        font-weight: 600;
+      }
+    }
+    .board-header-nav-text-item-inactive {
+      border-bottom: 3px solid transparent;
+      li {
+        font-size: 12px;
+        padding: 8px;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 500;
+      }
+    }
+  }
+  .board-header-right-section {
+    width: 18vw;
+    padding-right: 10px;
   }
 }
+.board-right-header-text {
+  font-size: 12px;
+  padding: 5px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+}
 
-// board Status Container styling
+// board Status Container styling...
 .status-card-header {
   color: rgba(0, 0, 0, 0.6);
   padding: 5px 10px;

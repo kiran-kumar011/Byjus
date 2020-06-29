@@ -26,7 +26,6 @@ class StatusCard extends Component {
 
   render() {
     const { status, boards } = this.props;
-    // const { touched } = this.state;
     const borderColor = color.find((itm) => itm.status === status);
     const arr =
       boards && boards.length
@@ -36,7 +35,7 @@ class StatusCard extends Component {
       <div draggable>
         <div className="status-card-header flex-default-styling">
           <h2 className="status-title">{this.capitalizeFirst()}</h2>
-          <div onClick={() => console.log('dropdown')}>
+          <div onClick={() => alert(`${status}`)}>
             <FaEllipsisH style={{ fontSize: '15px' }} />
           </div>
         </div>
@@ -68,6 +67,7 @@ const mapStateToProps = (state) => {
 
 StatusCard.propTypes = {
   boards: PropTypes.array.isRequired,
+  status: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps)(StatusCard);

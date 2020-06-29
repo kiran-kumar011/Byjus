@@ -1,68 +1,47 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### `Description of the problem and solution.`
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+Created the `Project Board` Prototype as an assingment.
+Project Board has multiple Action items with different Title, status, multiple owners and due dates assigned to it, which will be added from the backend and rendered in the UI as individual cards.
 
+## Solution
+
+Frontend `React`<br/>
+
+1. As per the UI, the components has been divided accordingly ex: in headers components like `Main Header` `Side Header` and for board seperate `Board Header` is added which increases the reusability of the components wherever necessary.
+2. For state mangement `Redux` is used and `Redux Saga` is used as a middleware.
+
+Backend `Node Express`<br/>
+
+1. For backend the mongoDB is used for the database from mLabs.
+2. Only to Create, Read and Update route is done which does corresponding Actions for the Project.
+
+### Reasoning behind your technical choices, including architectural.
+
+1. It is Easy to build and deploy both frontend and backend in Javacript and I have been using Express and React from the begining.
+2. And MongoDB is flexible enough to use.
+
+### Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
+
+1. I would complete adding the new project item from the UI to Database.
+2. Delete and Updating the project item can also be completed.
+
+### Link to other code you're particularly proud of.
+
+1. This is the only Assignment which I tried to write clean code because of the company standards
+
+### Link to the hosted application where applicable.
+
+[https://byjus-frontend.herokuapp.com/board](Assignment Link) which is deployed in Heroku
+
+### Setup instructions, and any tests or other documentation you created as part of your solution.
+
+[Clone the App](https://github.com/kiran-kumar011/Byjus.git) and run `cd repo-name && npm install && npm start`
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

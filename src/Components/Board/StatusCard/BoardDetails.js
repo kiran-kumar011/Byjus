@@ -29,9 +29,9 @@ const BoardDetails = ({ board, borderColor }) => {
         <div>
           <div className="board-title-icon">
             <p className="board-title">{board.title}</p>
-            {/* <div onClick={() => console.log('board item')}> */}
-            <FaEllipsisV style={{ fontSize: '14px' }} />
-            {/* </div> */}
+            <div onClick={() => alert(`${board.title}`)}>
+              <FaEllipsisV style={{ fontSize: '14px' }} />
+            </div>
           </div>
           <div className="board-owners-duedate-status flex-default-styling">
             <div className="board-owner-image-addowner flex-default-styling">
