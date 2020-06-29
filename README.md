@@ -1,3 +1,9 @@
+## About my experience
+
+I have worked with Express for almost 6 months and have implemented basic cricket scoring Web app with React, and I have worked for more than 1 year 3 months with React and React-Native.
+
+My overall work experience is 4 years and I have been working as a developer from past 1 years 5 months.
+
 ## Description of the problem and solution.
 
 ### Problem
@@ -33,6 +39,8 @@ Backend - Node Express<br/>
 ### Application link
 
 Assignment [https://byjus-frontend.herokuapp.com/board](Link) which is deployed in Heroku
+
+Backend resource - https://still-sea-81590.herokuapp.com
 
 ### Setup instructions
 
