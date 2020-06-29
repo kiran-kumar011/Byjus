@@ -31,7 +31,7 @@ Backend `Node Express`<br/>
 
 ### Link to other code you're particularly proud of.
 
-1. This is the only Assignment which I tried to write clean code because of the company standards
+1. This is the only Assignment which I tried to write clean code because of the company standards :sweat_smile:
 
 ### Link to the hosted application where applicable.
 
