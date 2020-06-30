@@ -9,8 +9,6 @@ const watcherSaga = [
 function* fetchAllBoardsRequest() {
   try {
     const { response, request } = yield call(get, { apiUrl: endpoints.boards });
-    console.log(response, 'response');
-    console.log(request, 'request');
 
     yield put({ type: boardTypes.boards.success, payload: response });
   } catch (e) {

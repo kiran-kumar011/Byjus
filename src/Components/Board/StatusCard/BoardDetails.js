@@ -22,7 +22,7 @@ const BoardDetails = ({ board, borderColor }) => {
       <div
         className="board-details-top-border"
         style={{
-          border: `2px solid ${borderColor}`,
+          border: `0.1rem solid ${borderColor}`,
         }}
       />
       <div className="board-details-body">
@@ -30,7 +30,7 @@ const BoardDetails = ({ board, borderColor }) => {
           <div className="board-title-icon">
             <p className="board-title">{board.title}</p>
             <div onClick={() => alert(`${board.title}`)}>
-              <FaEllipsisV style={{ fontSize: '14px' }} />
+              <FaEllipsisV style={{ fontSize: '0.7rem' }} />
             </div>
           </div>
           <div className="board-owners-duedate-status flex-default-styling">
@@ -38,13 +38,13 @@ const BoardDetails = ({ board, borderColor }) => {
               <img src={image} alt="owner" className="owner-image" />
               <AiOutlinePlusCircle
                 style={{
-                  paddingLeft: '5px',
+                  paddingLeft: '0.25rem',
                 }}
               />
             </div>
             <div className="board-duedate-completion-percentage-wrapper flex-default-styling">
-              <div className="board-duedate flex-default-styling">
-                <FaRegCalendarAlt style={{ fontSize: '14px' }} />
+              <div className="board-duedate">
+                <FaRegCalendarAlt style={{ fontSize: '0.7rem' }} />
                 <p className="duedate-para">
                   {moment(board.date).format('LL')}
                 </p>

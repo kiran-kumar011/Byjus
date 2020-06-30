@@ -1,6 +1,9 @@
 import axios from './axios';
 
-const url = 'https://still-sea-81590.herokuapp.com';
+const url =
+  process.env.NODE_ENV === 'production'
+    ? 'https://still-sea-81590.herokuapp.com'
+    : 'http://localhost:8080';
 
 const post = async ({ apiUrl, params = {} }) => {
   return axios

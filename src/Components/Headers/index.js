@@ -66,9 +66,9 @@ class Header extends Component {
                 </div>
               </Button>
               <Button>
-                <div className="user-name-image-wrapper flex-default-styling">
+                <div className="user-name-image-wrapper">
                   <img src={userImage} alt="user" className="user-image" />
-                  <p className="user-name">Kiran</p>
+                  <p className="user-name">Kiran kumar</p>
                 </div>
               </Button>
             </div>

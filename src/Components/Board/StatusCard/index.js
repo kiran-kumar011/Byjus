@@ -36,7 +36,7 @@ class StatusCard extends Component {
         <div className="status-card-header flex-default-styling">
           <h2 className="status-title">{this.capitalizeFirst()}</h2>
           <div onClick={() => alert(`${status}`)}>
-            <FaEllipsisH style={{ fontSize: '15px' }} />
+            <FaEllipsisH style={{ fontSize: '0.75rem' }} />
           </div>
         </div>
         <div>

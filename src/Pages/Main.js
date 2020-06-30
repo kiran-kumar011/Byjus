@@ -7,6 +7,7 @@ const Board = lazy(() => import('../Components/Board'));
 
 class Main extends Component {
   render() {
+    console.log(process.env.NODE_ENV, 'NODE env');
     return (
       <div>
         <div>

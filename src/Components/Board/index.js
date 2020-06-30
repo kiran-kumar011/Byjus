@@ -69,6 +69,7 @@ class Board extends Component {
                   selectedIcon={selectedIcon}
                 />
               </div>
+
               {path === 'board' && (
                 <div className="board-body-main-container flex-default-styling">
                   <ul className="board-status-card-list-wrapper">
